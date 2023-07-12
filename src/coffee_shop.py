@@ -38,3 +38,10 @@ class CoffeeShop:
 	def stock_add(self, drink, amount):
 		if "quantity" in drink.keys():
 			drink["quantity"] += amount
+
+	def stock_take(self, drinks):
+		if "price" in drinks.keys():
+			value = drinks["price"]
+		if "quantity" in drinks.keys():
+			amount = drinks["quantity"]
+		return value * amount

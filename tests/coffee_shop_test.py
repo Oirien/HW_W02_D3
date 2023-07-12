@@ -53,3 +53,8 @@ class TestCoffeeShop(unittest.TestCase):
         self.coffee_shop.dict_of_drinks(self.drink)
         self.coffee_shop.stock_add(self.coffee_shop.drinks, 4)
         self.assertDictEqual({"name": "Cola", "price": 2, "quantity": 4}, self.coffee_shop.drinks)
+
+    def test_stock_take(self):
+        self.coffee_shop.dict_of_drinks(self.drink)
+        self.coffee_shop.stock_add(self.coffee_shop.drinks, 4)
+        self.assertEqual(8, self.coffee_shop.stock_take(self.coffee_shop.drinks))
