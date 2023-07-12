@@ -3,5 +3,6 @@ class Drink:
         self.name = name
         self.price = price
         self.caffiene_level = caffiene_level
+        self.quantity = 0
 
     

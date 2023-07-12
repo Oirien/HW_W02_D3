@@ -24,7 +24,8 @@ class CoffeeShop:
 	def dict_of_drinks(self, drink):
 		self.drinks.update({
 			"name": drink.name, 
-			"price": drink.price
+			"price": drink.price,
+			"quantity": drink.quantity
 		})
 
 	def customer_can_afford(self, customer, drinks):
@@ -33,3 +34,7 @@ class CoffeeShop:
 			if drinks["price"] < customer.wallet:
 				drinks_customer_can_afford.append(drinks["name"])
 		return drinks_customer_can_afford
+	
+	def stock_add(self, drink, amount):
+		if "quantity" in drink.keys():
+			drink["quantity"] += amount
