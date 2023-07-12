@@ -25,6 +25,10 @@ class TestCustomer(unittest.TestCase):
         self.customer.decrease_wallet(10)
         self.assertEqual(40, self.customer.wallet)
 
+    def test_increase_energy(self):
+        self.customer.increase_energy(self.drink.caffiene_level)
+        self.assertEqual(80, self.customer.energy)
+
     def test_buy_drink(self):
         self.customer.buy_drink(self.drink.price)
         self.assertEqual(47.9, (self.customer.wallet))

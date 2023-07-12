@@ -12,5 +12,8 @@ class Customer:
     def buy_drink(self, drink):
         self.wallet -= drink
 
+    def increase_energy(self, drink):
+        self.energy += drink
+
     def energy_level(self, customer):
         return bool(customer.energy > 50)
