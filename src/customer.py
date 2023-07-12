@@ -9,4 +9,5 @@ class Customer:
         self.wallet -= amount
         
 
-    
+    def buy_drink(self, drink):
+        self.wallet -= drink
