@@ -13,6 +13,8 @@ class CoffeeShop:
 	def sell_drink(self, customer, drink):
 		if self.age_check == False:
 			return
+		if customer.energy_level == True:
+			return
 		customer.buy_drink(drink)
 		self.increase_till(drink)
 
