@@ -1,6 +1,7 @@
 import unittest
 from src.customer import Customer
 from src.drink import Drink
+from src.food import Food
 
 class TestCustomer(unittest.TestCase):
     
@@ -8,6 +9,7 @@ class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.customer = Customer("Steve", 50, 45, 65)
         self.drink = Drink("Cola", 2.1, 15)
+        self.food = Food("Pizza", 5, 25)
     # @unittest.skip("delete this line to run the test")
     def test_customer_has_name(self):
         self.assertEqual("Steve", self.customer.name)
@@ -35,4 +37,9 @@ class TestCustomer(unittest.TestCase):
 
     def test_energy_level(self):
         self.assertEqual(True, self.customer.energy_level(self.customer))
+
+    def test_buy_food(self):
+        self.customer.buy_food(self.food.price, self.food.digestion_level)
+        self.assertEqual(45, self.customer.wallet)
+        self.assertEqual(40, self.customer.energy)
         

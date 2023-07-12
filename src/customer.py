@@ -11,9 +11,17 @@ class Customer:
 
     def buy_drink(self, drink):
         self.wallet -= drink
+        self.increase_energy(drink)
 
     def increase_energy(self, drink):
         self.energy += drink
 
     def energy_level(self, customer):
         return bool(customer.energy > 50)
+    
+    def decrease_energy(self, food):
+        self.energy -= food
+
+    def buy_food(self, food, foodenergy):
+        self.wallet -= food
+        self.decrease_energy(foodenergy)
