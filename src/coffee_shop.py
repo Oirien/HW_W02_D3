@@ -20,3 +20,9 @@ class CoffeeShop:
 
 	def age_check(self, customer):
 		return bool(customer.age >= 16)
+	
+	def dict_of_drinks(self, drink):
+		self.drinks.update({
+			"name": drink.name, 
+			"price": drink.price
+		})

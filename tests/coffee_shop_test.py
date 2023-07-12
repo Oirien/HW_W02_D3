@@ -40,3 +40,9 @@ class TestCoffeeShop(unittest.TestCase):
 
     def test_age_check(self):
         self.assertEqual(True, self.coffee_shop.age_check(self.customer))
+
+    def test_dict_of_drinks(self):
+        self.coffee_shop.dict_of_drinks(self.drink)
+        self.assertDictEqual({"name": "Cola", "price": 2}, self.coffee_shop.drinks)
+
+    
