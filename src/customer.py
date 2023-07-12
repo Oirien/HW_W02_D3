@@ -5,4 +5,8 @@ class Customer:
         self.age = age
         self.energy = energy
 
+    def decrease_wallet(self, amount):
+        self.wallet -= amount
+        
+
     
