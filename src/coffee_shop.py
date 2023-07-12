@@ -29,7 +29,7 @@ class CoffeeShop:
 
 	def customer_can_afford(self, customer, drinks):
 		drinks_customer_can_afford = []
-		for drink in drinks:
-			if drink["price"] < customer.wallet:
-				drinks_customer_can_afford.append(drink)
+		if "price" in drinks.keys():
+			if drinks["price"] < customer.wallet:
+				drinks_customer_can_afford.append(drinks["name"])
 		return drinks_customer_can_afford
